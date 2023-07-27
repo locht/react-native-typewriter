@@ -1,0 +1,7 @@
+.eslint*
+.nvmrc
+.travis*
+setup-tests.js
+coverage/
+*tags*
+*.test.js
