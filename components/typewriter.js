@@ -155,7 +155,7 @@ export default class TypeWriter extends Component {
             onTyped,
             onTypingEnd,
             typing,
-            // ...rest,
+            ...rest
         } = this.props;
         const { visibleChars } = this.state;
         const component = <MyText {...rest}>{children}</MyText>;
