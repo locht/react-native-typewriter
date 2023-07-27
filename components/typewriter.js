@@ -156,11 +156,10 @@ export default class TypeWriter extends Component {
             onTypingEnd,
             typing,
             // ...rest,
-            ...props
         } = this.props;
         const { visibleChars } = this.state;
         // const component = <MyText {...rest}>{children}</MyText>;
-        const component = <MyText {...props}>{children}</MyText>;
+        const component = <MyText>{children}</MyText>;
 
         return hideSubstring(component, fixed, visibleChars);
     }
