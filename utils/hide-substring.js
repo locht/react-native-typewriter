@@ -1,6 +1,6 @@
 import React, { Children } from 'react';
 import { StyleSheet, Text } from 'react-native';
-import { MyText } from '../components/MyText';
+import MyText from '../components/MyText';
 
 const styles = StyleSheet.create({
     hidden: { color: 'transparent' },

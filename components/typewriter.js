@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 import { getTokenAt, hideSubstring } from '../utils';
-import { MyText } from './MyText';
+import MyText from './MyText';
 
 const DIRECTIONS = [-1, 0, 1];
 const MAX_DELAY = 100;
@@ -158,8 +158,7 @@ export default class TypeWriter extends Component {
             // ...rest,
         } = this.props;
         const { visibleChars } = this.state;
-        // const component = <MyText {...rest}>{children}</MyText>;
-        const component = <MyText>{children}</MyText>;
+        const component = <MyText {...rest}>{children}</MyText>;
 
         return hideSubstring(component, fixed, visibleChars);
     }

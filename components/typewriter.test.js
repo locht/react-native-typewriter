@@ -2,6 +2,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import { mount } from 'enzyme';
 import TypeWriter from './typewriter';
+import MyText from './MyText';
 
 describe('<TypeWriter />', () => {
     test('does not type by default', () => {
@@ -81,7 +82,7 @@ describe('<TypeWriter />', () => {
             wrapper.update();
 
             expect(
-                wrapper.contains(<Text style={{ display: 'none' }} />)
+                wrapper.contains(<MyText style={{ display: 'none' }} />)
             ).toEqual(false);
         });
 
@@ -221,9 +222,9 @@ describe('<TypeWriter />', () => {
 
             expect(
                 wrapper.contains(
-                    <Text style={{ color: 'transparent' }}>
+                    <MyText style={{ color: 'transparent' }}>
                         {children.slice(2)}
-                    </Text>
+                    </MyText>
                 )
             ).toEqual(true);
         });
@@ -354,7 +355,7 @@ describe('<TypeWriter />', () => {
     test('maintains nested Text elements', () => {
         const wrapper = mount(
             <TypeWriter initialDelay={0} minDelay={1} maxDelay={1} typing={1}>
-                Hello <Text style={{ color: 'red' }}>World!</Text>
+                Hello <MyText style={{ color: 'red' }}>World!</MyText>
             </TypeWriter>
         );
 
@@ -379,8 +380,8 @@ describe('<TypeWriter />', () => {
     test('handles nested Text elements anywhere in the children', () => {
         const wrapper = mount(
             <TypeWriter initialDelay={0} minDelay={1} maxDelay={1} typing={1}>
-                Hello <Text style={{ color: 'red' }}>World!</Text> This is from
-                TypeWriter.
+                Hello <MyText style={{ color: 'red' }}>World!</MyText> This is
+                from TypeWriter.
             </TypeWriter>
         );
 
@@ -390,7 +391,7 @@ describe('<TypeWriter />', () => {
         expect(wrapper.text()).toEqual('Hello World! This is from TypeWriter.');
         expect(
             wrapper.containsMatchingElement(
-                <Text style={{ color: 'red' }}>World!</Text>
+                <MyText style={{ color: 'red' }}>World!</MyText>
             )
         ).toBe(true);
     });
